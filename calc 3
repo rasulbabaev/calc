@@ -1,0 +1,67 @@
+#include <iostream> 
+#include <string> 
+#include <locale> 
+#include <stdlib.h> 
+#include <cmath> 
+using namespace std; 
+int main() { 
+setlocale(LC_ALL, "Russian"); 
+char ss; 
+do { 
+cout « "calc" « endl; 
+int a, b, r; 
+char z; 
+cout « "Выберите действие  [+, -, *, /, %, ^, !, &, |, <, >]:" « endl; 
+cin » z; 
+cout « " Введите первое число: " « endl; 
+cin » a; 
+if ((z != '!') && (z != '<') && (z != '>')) 
+{ 
+cout « "Ведите второе число: " « endl; 
+cin » b; 
+} 
+switch (z) { 
+case '+': 
+cout « "Ответ: " « a + b « endl; 
+break; 
+case '-': 
+cout « "Ответ: " « a - b « endl; 
+break; 
+case '*': 
+cout « "Ответ: " « a * b « endl; 
+break; 
+case '/': 
+if (b != 0) 
+cout « "Ответ:" « (double)a / (double)b « endl; 
+else 
+cerr « "нельзя делить на ноль " « endl; 
+break; 
+case '%': 
+cout « "Ответ:" « a % b « endl; 
+break; 
+case '^': 
+cout « "Ответ: " « pow(a, b) « endl; 
+break; 
+case '<': 
+cout « "Ответ: " « (a « 1) « endl; 
+break; 
+case '>': 
+cout « "Ответ: " « (a » 1) « endl; 
+break; 
+case '!': 
+cout « " Ответ: " « !a « endl; 
+break; 
+case '|': 
+cout « "Ответ: " « (a | b) « endl; 
+break; 
+case '&': 
+cout « "Ответ:" « (a & b) « endl; 
+break; 
+default: 
+cout « "Ошибка" « endl; 
+} 
+cout « "Продолжить работу? (y/n)" « endl; 
+cin » ss; 
+} while (ss == 'y'); 
+return 0; 
+}
